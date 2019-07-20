@@ -2,14 +2,14 @@
   <div id="navigation">
     <nav>
       <ul>
-        <li v-if="isHomePage"><a class="nav-link" href="/guest-book">Перейти к гостевой книге</a></li>
-        <li v-if="!isHomePage"><a class="nav-link" href="/">Главная</a></li>
+        <li v-if="isHomePage"><router-link to="guest-book" class="nav-link">Перейти к гостевой книге</router-link></li>
+        <li v-if="!isHomePage"><router-link to="/" class="nav-link">Главная</router-link></li>
 
         <li v-if="isCurrentUserLoggedIn"><span class="nav-text">Вы вошли как {{currentUserName}}</span></li>
-        <li v-if="isCurrentUserLoggedIn"><a @click="logout" class="nav-link" href="/signup">Выйти</a></li>
+        <li v-if="isCurrentUserLoggedIn"><router-link to="signup" @click="logout" class="nav-link">Выйти</router-link></li>
 
-        <li v-if="!isCurrentUserLoggedIn"><a class="nav-link" href="/login">Войти</a></li>
-        <li v-if="!isCurrentUserLoggedIn"><a class="nav-link" href="/signup">Зарегистрироваться</a></li>
+        <li v-if="!isCurrentUserLoggedIn"><router-link to="login" class="nav-link">Войти</router-link></li>
+        <li v-if="!isCurrentUserLoggedIn"><router-link to="signup" class="nav-link">Зарегистрироваться</router-link></li>
       </ul>
     </nav>
   </div>
