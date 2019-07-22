@@ -6,7 +6,7 @@
         <li v-if="!isHomePage"><router-link to="/" class="nav-link">Главная</router-link></li>
 
         <li v-if="isCurrentUserLoggedIn"><span class="nav-text">Вы вошли как {{currentUserName}}</span></li>
-        <li v-if="isCurrentUserLoggedIn"><router-link to="signup" @click="logout" class="nav-link">Выйти</router-link></li>
+        <li v-if="isCurrentUserLoggedIn"><button @click="logout()" class="nav-link btn-logout">Выйти</button></li>
 
         <li v-if="!isCurrentUserLoggedIn"><router-link to="login" class="nav-link">Войти</router-link></li>
         <li v-if="!isCurrentUserLoggedIn"><router-link to="signup" class="nav-link">Зарегистрироваться</router-link></li>
@@ -93,6 +93,12 @@ ul li {
   font-family: $fontFamilyForServiceText;
   font-size: 14px;
   color: $colorForText;
+}
+
+.btn-logout {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
 }
 
 
